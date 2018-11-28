@@ -1,4 +1,4 @@
-const BASE_URL = 'https://wagon-chat.herokuapp.com';
+const BASE_URL = '/api/v1/channels';
 
 export const FETCH_MESSAGES = 'FETCH_MESSAGES';
 export const MESSAGE_POSTED = 'MESSAGE_POSTED';
@@ -23,6 +23,7 @@ export function createMessage(channel, author, content) {
       Accept: 'application/json',
       'Content-Type': 'application/json'
     },
+    credentials: "same-origin",
     body: JSON.stringify(body)
   }).then(r => r.json());
 
